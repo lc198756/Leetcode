@@ -9,10 +9,10 @@ public class Solution {
 			} else if(nums[mid] < target) {
 				lo = mid + 1;
 			} else {
-				if(nums[lo] == nums[mid]) {
-					hi--;
-				}else {
+				if(nums[lo] !=target) {
 					lo++;
+				}else if(nums[hi]!=target){
+					hi--;
 				}
 			}
 		}
