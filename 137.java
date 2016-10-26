@@ -18,7 +18,23 @@ public class Solution {
         return 0;
     }
 }
+
 //2
+public int singleNumber(int[] A) {
+        int [] count = new int[32];
+        int result = 0;
+        for (int i = 0; i < 32; i++) {
+            for (int j = 0; j < A.length; j++) {
+                if (((A[j] >> i) & 1)==1) {
+                    count[i]++;
+                }
+            }
+            result |= ((count[i] % 3) << i);
+        }
+        return result;
+    }
+
+//3
 public int singleNumber(int[] A) {
          if(A.length == 0||A==null)
             return 0;
